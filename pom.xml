@@ -23,6 +23,7 @@
         <spring.messaging.version>5.2.8.RELEASE</spring.messaging.version>
         <thymeleaf.layout.dialect.version>2.5.1</thymeleaf.layout.dialect.version>
         <springdoc.version>1.6.9</springdoc.version>
+        <springfox.version>3.0.0</springfox.version>
     </properties>
 
     <dependencies>
@@ -118,6 +119,12 @@
             <groupId>org.springdoc</groupId>
             <artifactId>springdoc-openapi-ui</artifactId>
             <version>${springdoc.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-boot-starter</artifactId>
+            <version>${springfox.version}</version>
         </dependency>
     </dependencies>
 
