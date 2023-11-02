@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>StackOverflow-like Page</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+
+        .navbar {
+            padding: 0 15%;
+        }
+
+        .search-bar {
+            width: 100%;
+        }
+
+        .navbar-brand, .navbar-toggler, .collapse {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-brand {
+            margin-bottom: 0.5rem;
+        }
+
+        .profile-button1 {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .profile-button1:hover {
+            background-color: blue;
+            outline: none;
+        }
+
+        .profile-button1:active {
+            background-color: #007bff !important;
+            outline: none !important;
+            box-shadow: none !important;
+        }
+
+        .profile-button1 {
+            background-color: white;
+            color: blue;
+        }
+
+        .profile-button1:hover {
+            background-color: lightblue;
+            color: blue;
+            outline: none;
+        }
+
+        .profile-button1:active {
+            background-color: #007bff !important;
+            outline: none !important;
+            box-shadow: none !important;
+        }
+
+        .profile-button2 {
+            background-color: royalblue;
+            color: #fff;
+        }
+
+        .profile-button2:hover {
+            background-color: darkblue;
+            color: white;
+            outline: none;
+        }
+
+        .profile-button2:active {
+            background-color: #007bff !important;
+            outline: none !important;
+            box-shadow: none !important;
+        }
+
+        .list-group-item a {
+            text-decoration: none;
+            color: rgb(128, 128, 128);
+            border: none;
+        }
+
+        .list-group-item a:hover {
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .vertical-line {
+            border-left: 1px solid #ccc;
+            height: 100vh;
+            position: absolute;
+            left: 22.5%;
+            margin-left: -1px;
+        }
+
+        .words-list {
+            border: none;
+            padding-top: 0.25rem;
+            padding-left: 260px;
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            left: 0;
+            margin-bottom: 10px;
+        }
+
+        .words-list ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .words-list a {
+            text-decoration: none;
+            color: rgb(128, 128, 128);
+            border: none;
+            margin-bottom: 5px;
+        }
+
+        .words-list a:hover {
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .non-link {
+            color: rgb(128, 128, 128);
+            border: none;
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+
+        .list-group-item-main {
+            background-color: white;
+            padding-left: 20px;
+            margin-bottom: 10px;
+        }
+
+        .list-group-item1 {
+            padding-left: 50px;
+            margin-bottom: 10px;
+        }
+
+        .list-group-item1:hover {
+            color: black;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 5px;
+        }
+
+        .header-line {
+            background-color: black;
+            height: 215px;
+        }
+
+        .header-words {
+            color: rgb(192,192,192);
+            margin-left: 600px;
+            width: 20em;
+            padding-top: 35px;
+            font-size: 16px;
+        }
+
+        .header-button {
+            color: white;
+            border: 2px solid black;
+            background-color: blue;
+            padding: 14px 28px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-left: 600px;
+            height: 55px;
+
+        }
+        .header-button:hover {
+            background-color: darkblue;
+            text-decoration: none;
+            color: white;
+        }
+
+
+        .footer {
+            display: flex;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            height: 250px;
+            background-color: black;
+        }
+
+        .footer-words {
+            display: flex;
+            font-size: 17px;
+            color: white;
+        }
+
+        .footer-mini-words {
+            display: flex;
+            font-size: 15px;
+            color: white;
+            margin-top: 41px;
+        }
+
+        .mini-inst {
+            margin-left: 100px;
+        }
+
+        .mini-link {
+            margin-left: 20px;
+        }
+
+        .mini-twitter {
+            margin-left: 20px;
+        }
+
+        .mini-facebook {
+            margin-left: 20px;
+        }
+
+        .footer-blog {
+            margin-left: 30px;
+        }
+
+        .footer-stack {
+            margin-top: 40px;
+            margin-left: 150px;
+        }
+
+        .footer-company {
+            margin-top: 40px;
+            margin-left: 300px;
+        }
+
+        .footer-network {
+            margin-top: 40px;
+            margin-left: 300px;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">StackOverflow</a>
+    <div class="collapse navbar-collapse">
+        <form class="form-inline search-bar">
+            <input class="form-control mr-2" type="search" placeholder="Поиск" aria-label="Search" style="width: 80%;">
+            <button class="btn profile-button1" type="submit">Войти</button>
+            <button class="btn profile-button2" type="submit">Регистрация</button>
+        </form>
+    </div>
+</nav>
+
+<header>
+    <div class="header-line">
+        <p class="header-words">Stack Overflow на русском — это сайт
+            вопросов и ответов для программистов.
+            Присоединяйтесь! Регистрация займёт не
+            больше минуты.</p>
+        <a href="#" class="header-button">Присоединиться к сообществу</a>
+    </div>
+</header>
+
+<div class="vertical-line"></div>
+
+<div class="words-list">
+    <ul class="list-group">
+        <li><a href="#" class="list-group-item-main">Главная</a></li>
+        <li><span class="list-group-item non-link">ПУБЛИЧНЫЕ</span></li>
+        <li><a href="#" class="list-group-item1">Вопросы</a></li>
+        <li><a href="#" class="list-group-item1">Метки</a></li>
+        <li><a href="#" class="list-group-item1">Участники</a></li>
+        <li><a href="#" class="list-group-item1">Неотвеченные</a></li>
+    </ul>
+</div>
+
+<footer class="footer">
+    <div class="footer-words">
+        <p class="footer-stack">STACK OVERFLOW НА РУССКОМ</p>
+        <p class="footer-company">КОМПАНИЯ</p>
+        <p class="footer-network">СЕТЬ STACK EXCHANGE</p>
+        <div class="footer-mini-words">
+            <div class="mini-inst">
+                <p class="footer-Instagram">Instagram</p>
+            </div>
+            <div class="mini-link">
+                <p class="footer-LinkedIn">LinkedIn</p>
+            </div>
+            <div class="mini-twitter">
+                <p class="footer-Twitter">Твиттер</p>
+            </div>
+            <div class="mini-facebook">
+                <p class="footer-Facebook">Facebook</p>
+            </div>
+            <div class="mini-blog">
+                <p class="footer-blog">Блог</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    const footerWords = document.querySelector('.footer');
+
+
+    function toggleFooterWords() {
+        const scrollTop = window.scrollY || window.pageYOffset;
+        const documentHeight = document.documentElement.scrollHeight;
+        const windowHeight = window.innerHeight;
+
+        if (scrollTop + windowHeight >= documentHeight) {
+            footerWords.style.display = 'flex';
+        } else {
+            footerWords.style.display = 'none';
+        }
+    }
+
+
+    window.addEventListener('scroll', toggleFooterWords);
+
+
+    toggleFooterWords();
+</script>
+</body>
+</html>
